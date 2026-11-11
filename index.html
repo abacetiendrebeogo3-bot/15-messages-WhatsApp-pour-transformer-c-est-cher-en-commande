@@ -8,13 +8,54 @@
     name="description"
     content="Tes prospects t’écrivent, voient le prix… et disparaissent ? Voici 15 messages à copier-coller pour récupérer ces ventes sur WhatsApp. Accès immédiat — 2 500 FCFA."
   />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:," />
+  <link rel="preload" as="image" href="images/guide-tablette-offre.webp" type="image/webp" fetchpriority="high" />
+  <style>
+    :root{--emerald-950:#032216;--emerald-900:#042f1e;--emerald-800:#07442c;--emerald-700:#0b5c3b;--emerald-100:#e7f4ed;--emerald-50:#f3f8f5;--whatsapp:#25d366;--amber-500:#f59e0b;--amber-400:#fbbf24;--amber-600:#d97706;--ivory:#fafaf7;--white:#ffffff;--ink-900:#111827;--ink-700:#374151;--ink-500:#6b7280;--border-light:#e3e8e5;--danger-bg:#fef2f2;--danger-ink:#b91c1c;--radius-sm:12px;--radius-md:20px;--radius-lg:28px;--radius-pill:999px;--shadow-sm:0 6px 20px rgba(4,47,30,.06);--shadow-md:0 18px 45px rgba(4,47,30,.12);--shadow-amber:0 12px 30px rgba(245,158,11,.28);--font-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:var(--font-sans);color:var(--ink-900);background:var(--ivory);line-height:1.65;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%;height:auto}
+    button{font-family:inherit}
+    .font-mono{font-family:var(--font-mono)}
+    .container{width:min(1140px,100% - 2rem);margin-inline:auto}
+    .topbar{position:sticky;top:0;z-index:40;background:rgba(4,47,30,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .topbar__inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px}
+    .topbar__brand{display:inline-flex;align-items:center;gap:.6rem;color:var(--white);text-decoration:none;font-weight:700;font-size:.95rem;letter-spacing:-.01em}
+    .topbar__dot{width:10px;height:10px;border-radius:50%;background:var(--whatsapp);box-shadow:0 0 0 4px rgba(37,211,102,.2)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;border:0;border-radius:var(--radius-pill);font-weight:700;text-decoration:none;cursor:pointer;transition:transform .24s cubic-bezier(.25,.46,.45,.94),box-shadow .24s ease,background-color .24s ease}
+    .btn--sm{padding:.55rem 1.1rem;font-size:.875rem}
+    .btn--lg{padding:.95rem 1.65rem;font-size:1rem}
+    .btn--xl{padding:1.15rem 1.9rem;font-size:1.0625rem}
+    .btn--full{width:100%}
+    .btn--amber{background:linear-gradient(135deg,var(--amber-400) 0%,var(--amber-500) 100%);color:var(--emerald-950);box-shadow:var(--shadow-amber)}
+    .btn--amber:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 16px 36px rgba(245,158,11,.36)}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 75% 25%,#0c5e3c 0%,var(--emerald-900) 52%,var(--emerald-950) 100%);color:var(--white);padding:clamp(3rem,7vw,5.5rem) 0}
+    .hero__glow{position:absolute;inset:auto -10% -30% auto;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.16),transparent 68%);pointer-events:none}
+    .hero__grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:clamp(2rem,5vw,4rem)}
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .9rem;border-radius:var(--radius-pill);font-size:.85rem;font-weight:600;margin-bottom:1.35rem}
+    .eyebrow--dark{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);color:#d1fae5}
+    .hero__title{margin:0 0 1.25rem;font-size:clamp(2.1rem,4.3vw,3.45rem);font-weight:800;line-height:1.1;letter-spacing:-.025em}
+    .underline-swoosh{position:relative;display:inline-block;color:var(--amber-400)}
+    .underline-swoosh svg{position:absolute;left:0;bottom:-8px;width:100%;height:14px}
+    .hero__subtitle{margin:0 0 2rem;font-size:clamp(1.125rem,2vw,1.35rem);color:#e2ede7;max-width:34ch}
+    .hero__subtitle strong{color:var(--white)}
+    .hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.35rem;margin-bottom:1.75rem}
+    .hero__text-link{color:#d1fae5;font-weight:600;font-size:.96rem;text-decoration:underline;text-underline-offset:4px;transition:color .2s ease}
+    .hero__text-link:hover{color:var(--amber-400)}
+    .hero__meta{display:flex;flex-wrap:wrap;gap:.85rem 1.5rem;list-style:none;padding:0;margin:0;color:#b7d7c6;font-size:.92rem;font-weight:500}
+    .hero__meta li{display:inline-flex;align-items:center;gap:.45rem}
+    .hero__meta svg{color:var(--whatsapp)}
+    .image-frame{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in;border-radius:var(--radius-lg);overflow:hidden;transition:transform .28s ease,box-shadow .28s ease}
+    .image-frame:hover{transform:translateY(-3px)}
+    .image-frame--hero{border:1px solid rgba(255,255,255,.14);box-shadow:0 25px 60px rgba(0,0,0,.42)}
+    @media (max-width:920px){.hero__grid{grid-template-columns:1fr}}
+    @media (max-width:767px){.topbar__cta{display:none}}
+  </style>
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="styles.css" /></noscript>
+  <script src="script.js" defer></script>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -111,15 +152,17 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
           <button
             type="button"
             class="image-frame image-frame--hero"
-            data-lightbox="images/guide-tablette-offre.jpg"
+            data-lightbox="images/guide-tablette-offre.webp"
             data-caption="15 messages à copier-coller — Guide pratique pour vendeurs · Accès immédiat 2 500 FCFA"
             aria-label="Agrandir l'aperçu du guide"
           >
             <img
-              src="images/guide-tablette-offre.jpg"
+              src="images/guide-tablette-offre.webp"
               alt="15 messages à copier-coller pour transformer c'est cher en commande - Accès immédiat 2 500 FCFA"
-              width="1024"
-              height="1024"
+              width="720"
+              height="720"
+              fetchpriority="high"
+              decoding="async"
             />
           </button>
         </div>
@@ -129,25 +172,26 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
     <!-- 2. LE PROBLÈME (MIROIR) -->
     <section id="probleme" class="section section--ivory">
       <div class="container split-layout split-layout--reverse">
-        <div class="split-layout__media reveal">
+        <div class="split-layout__media">
           <button
             type="button"
             class="image-frame image-frame--card"
-            data-lightbox="images/probleme-prix-disparu.jpg"
+            data-lightbox="images/probleme-prix-disparu.webp"
             data-caption="Et là, plus rien. Il a vu le prix… et il a disparu."
             aria-label="Agrandir l'image illustrant le silence après l'annonce du prix"
           >
             <img
-              src="images/probleme-prix-disparu.jpg"
+              src="images/probleme-prix-disparu.webp"
               alt="Conversation WhatsApp : Prix ? 15 000 FCFA — Et là, plus rien. Il a vu le prix et il a disparu."
               loading="lazy"
-              width="1024"
-              height="1024"
+              decoding="async"
+              width="760"
+              height="760"
             />
           </button>
         </div>
 
-        <div class="split-layout__content reveal">
+        <div class="split-layout__content">
           <span class="section-tag section-tag--danger">01 · Le problème</span>
           <h2 class="section-title">
             Tu paies la pub, tu reçois les messages, tu annonces le prix… et plus rien.
@@ -187,7 +231,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
     <!-- 3. LA VRAIE CAUSE -->
     <section id="vraie-cause" class="section section--white">
       <div class="container split-layout">
-        <div class="split-layout__content reveal">
+        <div class="split-layout__content">
           <span class="section-tag">02 · La vraie cause</span>
           <h2 class="section-title">
             Le problème n’est presque jamais ton prix.
@@ -212,20 +256,21 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
           </div>
         </div>
 
-        <div class="split-layout__media reveal">
+        <div class="split-layout__media">
           <button
             type="button"
             class="image-frame image-frame--card image-frame--portrait"
-            data-lightbox="images/couverture-cest-cher.jpg"
+            data-lightbox="images/couverture-cest-cher.webp"
             data-caption="Transformer « c'est cher » en vraie discussion avec la bonne question"
             aria-label="Agrandir l'image sur la gestion de l'objection c'est cher"
           >
             <img
-              src="images/couverture-cest-cher.jpg"
+              src="images/couverture-cest-cher.webp"
               alt="15 messages WhatsApp pour transformer c'est cher en commande : exemple de réponse à l'objection"
               loading="lazy"
-              width="682"
-              height="1024"
+              decoding="async"
+              width="533"
+              height="800"
             />
           </button>
         </div>
@@ -235,7 +280,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
     <!-- 4. PREUVE (TON PARCOURS) -->
     <section id="preuve" class="section section--mint">
       <div class="container">
-        <div class="section-header section-header--center reveal">
+        <div class="section-header section-header--center">
           <span class="section-tag">03 · D’où vient ce guide</span>
           <h2 class="section-title">
             Construit sur le terrain : pub Facebook, boutique réelle et closing sur WhatsApp.
@@ -246,7 +291,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
         </div>
 
         <div class="story-grid">
-          <article class="story-card reveal">
+          <article class="story-card">
             <div class="story-card__num font-mono">01 / PUB FACEBOOK</div>
             <h3>Des prospects payés au message</h3>
             <p>
@@ -254,7 +299,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
             </p>
           </article>
 
-          <article class="story-card reveal">
+          <article class="story-card">
             <div class="story-card__num font-mono">02 / BOUTIQUE &amp; COMMERCIALES</div>
             <h3>La réalité des réponses en boutique</h3>
             <p>
@@ -262,7 +307,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
             </p>
           </article>
 
-          <article class="story-card reveal">
+          <article class="story-card">
             <div class="story-card__num font-mono">03 / LES 15 MESSAGES</div>
             <h3>Ce qui marche gardé mot pour mot</h3>
             <p>
@@ -271,7 +316,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
           </article>
         </div>
 
-        <div class="creator-note reveal" id="creator-note">
+        <div class="creator-note" id="creator-note">
           <span class="creator-note__badge">Expérience terrain</span>
           <p id="creator-note-text">
             Chaque message a été pensé pour être utilisé rapidement par un vendeur seul ou transmis directement à une équipe commerciale sur WhatsApp.
@@ -283,7 +328,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
     <!-- 5. LE PLAN (LA MÉTHODE EN 4 TEMPS) -->
     <section id="plan" class="section section--emerald">
       <div class="container">
-        <div class="section-header section-header--center reveal">
+        <div class="section-header section-header--center">
           <span class="section-tag section-tag--amber">04 · Le plan</span>
           <h2 class="section-title section-title--light">
             La méthode en 4 temps pour ne plus jamais bloquer sur le prix
@@ -294,7 +339,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
         </div>
 
         <div class="plan-grid">
-          <article class="plan-card reveal">
+          <article class="plan-card">
             <div class="plan-card__top">
               <span class="plan-card__step font-mono">TEMPS 01</span>
               <span class="plan-card__icon" aria-hidden="true">?</span>
@@ -305,7 +350,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
             </p>
           </article>
 
-          <article class="plan-card reveal">
+          <article class="plan-card">
             <div class="plan-card__top">
               <span class="plan-card__step font-mono">TEMPS 02</span>
               <span class="plan-card__icon" aria-hidden="true">★</span>
@@ -316,7 +361,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
             </p>
           </article>
 
-          <article class="plan-card reveal">
+          <article class="plan-card">
             <div class="plan-card__top">
               <span class="plan-card__step font-mono">TEMPS 03</span>
               <span class="plan-card__icon" aria-hidden="true">🛡</span>
@@ -327,7 +372,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
             </p>
           </article>
 
-          <article class="plan-card reveal">
+          <article class="plan-card">
             <div class="plan-card__top">
               <span class="plan-card__step font-mono">TEMPS 04</span>
               <span class="plan-card__icon" aria-hidden="true">→</span>
@@ -344,7 +389,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
     <!-- 6. CE QUE TU REÇOIS -->
     <section id="ce-que-tu-recois" class="section section--ivory">
       <div class="container">
-        <div class="section-header section-header--center reveal">
+        <div class="section-header section-header--center">
           <span class="section-tag">05 · Ce que tu reçois</span>
           <h2 class="section-title">
             Tout le pack pratique prêt à utiliser dès aujourd’hui
@@ -355,21 +400,22 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
         </div>
 
         <!-- Mise en avant Avant / Après -->
-        <div class="before-after-showcase reveal">
+        <div class="before-after-showcase">
           <div class="before-after-showcase__media">
             <button
               type="button"
               class="image-frame image-frame--card"
-              data-lightbox="images/avant-apres-whatsapp.jpg"
+              data-lightbox="images/avant-apres-whatsapp.webp"
               data-caption="Exemple Avant / Après : passer du prix brut sans réponse à une commande confirmée"
               aria-label="Agrandir le comparatif Avant et Après sur WhatsApp"
             >
               <img
-                src="images/avant-apres-whatsapp.jpg"
+                src="images/avant-apres-whatsapp.webp"
                 alt="Comparaison WhatsApp Avant : Prix ? 15 000 FCFA sans suite. Après : dialogue en 4 temps et Commande confirmée."
                 loading="lazy"
-                width="1024"
-                height="1024"
+                decoding="async"
+                width="800"
+                height="800"
               />
             </button>
           </div>
@@ -414,7 +460,7 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
     <!-- 7. CE GUIDE EST POUR TOI SI... -->
     <section id="pour-qui" class="section section--white">
       <div class="container">
-        <div class="audience-box reveal">
+        <div class="audience-box">
           <div class="audience-box__header">
             <span class="section-tag">06 · Vérifie si c’est pour toi</span>
             <h2 class="section-title">Ce guide est pour toi si…</h2>
@@ -456,15 +502,16 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
     <!-- 8. PRIX + BOUTON & 9. GARANTIE -->
     <section id="offre" class="section section--emerald section--offer">
       <div class="container">
-        <div class="offer-card reveal">
+        <div class="offer-card">
           <div class="offer-card__grid">
             <div class="offer-card__visual">
               <img
-                src="images/guide-tablette-offre.jpg"
+                src="images/guide-tablette-offre.webp"
                 alt="15 messages WhatsApp pour transformer c'est cher en commande — 2 500 FCFA"
                 loading="lazy"
-                width="1024"
-                height="1024"
+                decoding="async"
+                width="720"
+                height="720"
               />
             </div>
 
@@ -560,8 +607,5 @@ src="https://www.facebook.com/tr?id=1601889501091366&ev=PageView&noscript=1"
       <p id="lightbox-caption"></p>
     </div>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
-
